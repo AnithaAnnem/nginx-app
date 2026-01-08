@@ -1,0 +1,18 @@
+appName: nginx-app
+namespace: dev
+replicas: 2
+
+image:
+  repository: nginx
+  tag: "1.25"
+
+resources:
+  cpuRequest: "100m"
+  cpuLimit: "500m"
+  memRequest: "128Mi"
+  memLimit: "256Mi"
+
+features:
+  liveness: true
+  readiness: true
+#  hpa: false

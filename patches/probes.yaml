@@ -1,0 +1,9 @@
+spec:
+  template:
+    spec:
+      containers:
+      - name: nginx-app
+        livenessProbe:
+          initialDelaySeconds: 5
+        readinessProbe:
+          initialDelaySeconds: 3
