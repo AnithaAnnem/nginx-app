@@ -1,18 +1,24 @@
-appName: nginx-app
-namespace: dev
+# Application identity
+appName: nginx
+namespace: default
+
+# Deployment settings
 replicas: 2
 
+# Container image
 image:
   repository: nginx
-  tag: "1.25"
+  tag: latest
 
+# Resource configuration
 resources:
-  cpuRequest: "100m"
-  cpuLimit: "500m"
-  memRequest: "128Mi"
-  memLimit: "256Mi"
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "200m"
+    memory: "256Mi"
 
-features:
-  liveness: true
-  readiness: true
-#  hpa: false
+# Feature flags
+enableLiveness: true
+enableReadiness: true
